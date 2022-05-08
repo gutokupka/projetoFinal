@@ -1,7 +1,15 @@
 <template>
     <lightning-card title="Lista de Clientes" icon-name="custom:custom60">
         <div class="slds-m-horizontal_medium">
-            
+            <div class="c-container">
+                <lightning-layout multiple-rows>
+                    <template for:each={accounts.allDatas} for:item="cTemp">
+                        
+                        {cTemp.Account.Name}
+                        
+                    </template>
+                </lightning-layout>
+            </div> 
         </div>
     </lightning-card>
 </template>

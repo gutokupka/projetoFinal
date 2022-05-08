@@ -25,10 +25,10 @@ export default class AccountList extends LightningElement {
 
     getAccountJS(){
         getAccounts({filter : this.filterName, pageNumber : this.page}).then((response) => {
-            this.products = response;
-            console.log('this.products', this.products)
+            this.accounts = response;
+            console.log('this.accounts', this.accounts)
         }).catch((error) => {
-            console.log('ERRO AO BUSCAR PRODUTO', error);
+            console.log('ERRO AO BUSCAR CONTA', error);
         });
     }
 }
