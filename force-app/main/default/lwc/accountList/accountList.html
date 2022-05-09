@@ -4,9 +4,13 @@
             <div class="c-container">
                 <lightning-layout multiple-rows>
                     <template for:each={accounts.allDatas} for:item="cTemp">
-                        
-                        {cTemp.Account.Name}
-                        
+                        <lightning-layout-item 
+                            size="4"
+                            key={cTemp.Id}
+                            padding="arround-small">
+                            
+                            {cTemp.Name}
+                        </lightning-layout-item>
                     </template>
                 </lightning-layout>
             </div> 
