@@ -9,7 +9,11 @@
                             key={cTemp.Id}
                             padding="arround-small">
                             
-                            {cTemp.Name}
+                            <c-account-card
+                            account={cTemp}
+                            class="slds-m-arround_x-small"
+                            onselected={handleAccountSelected}></c-account-card>
+
                         </lightning-layout-item>
                     </template>
                 </lightning-layout>
