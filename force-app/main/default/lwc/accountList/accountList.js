@@ -26,9 +26,22 @@ export default class AccountList extends LightningElement {
     getAccountJS(){
         getAccounts({filter : this.filterName, pageNumber : this.page}).then((response) => {
             this.accounts = response;
-            console.log('this.accounts', this.accounts)
         }).catch((error) => {
             console.log('ERRO AO BUSCAR CONTA', error);
         });
+    }
+
+    handlePreviousPage(){
+        this.page = this.page -1;
+        this.getAccountJS();
+    }
+
+    handleNextPage(){
+        this.page = this.page + 1;
+        this.getAccountJS();
+    }
+
+    handleAccountSelected(event){        
+        fireEvent(this.pageRef, 'selectedAccount', event.detail);
     }
 }

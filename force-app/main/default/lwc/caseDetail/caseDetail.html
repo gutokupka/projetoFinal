@@ -1,0 +1,41 @@
+<template>
+        <lightning-card title="Detalhes do Chamado" icon-name="custom:custom64">
+
+            <div class="slds-m-horizontal_medium">
+                <template if:true={showAccountAlert}>
+                    <p style="color: red;">Por favor, selecione um cliente.</p>
+                </template>
+                <p>Cliente: {accountName}</p>
+                
+                <lightning-input
+                    type="text"
+                    name="subject"
+                    label="Assunto do chamado"
+                    onchange={handleSubject}></lightning-input>
+
+                <lightning-input
+                    type="date"
+                    name="caseDate"
+                    label="Informe a data da ocorrencia"
+                    onchange={handleDate}></lightning-input>
+
+                <lightning-textarea
+                    type="text"
+                    name="description"
+                    label="Descrição da ocorrência"
+                    max-length="32000"
+                    onchange={handleDescription}></lightning-textarea>
+
+                <template if:true={isEnabledSave}>
+                    <div style="text-align: center;">
+                        <br/>
+                        <br/>
+                        <lightning-button 
+                            variant="brand"
+                            label="Salvar"
+                            onclick={submitCase}></lightning-button>  
+                    </div>                     
+                </template>
+            </div>
+        </lightning-card>
+</template>

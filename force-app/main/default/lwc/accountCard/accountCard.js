@@ -1,4 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api} from 'lwc';
 
 export default class AccountCard extends LightningElement {
 
@@ -13,7 +13,7 @@ export default class AccountCard extends LightningElement {
         this._account = {id : value.Id, nome : value.Name, imagem : imagemVar};
     }
 
-    selectaccount(){
+    selectAccount(){
         const accountSelected = new CustomEvent("selected", {
             detail : JSON.stringify(this._account)
         });
