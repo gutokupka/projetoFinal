@@ -1,17 +1,17 @@
 <template>
     <lightning-card title="Lista de Clientes" icon-name="standard:customers">
-        <div class="slds-m-horizontal_medium">
+        <div class="slds-var-m-horizontal_medium">
             <div class="c-container">
                 <lightning-layout multiple-rows>
                     <template for:each={accounts.allDatas} for:item="cTemp">
                         <lightning-layout-item 
                             size="4"
                             key={cTemp.Id}
-                            padding="arround-small">
+                            padding="around-small">
                             
                             <c-account-card
                             account={cTemp}
-                            class="slds-m-arround_x-small"
+                            class="slds-var-m-around_x-small"
                             onselected={handleAccountSelected}></c-account-card>
 
                         </lightning-layout-item>
